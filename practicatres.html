@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>segundo responsivo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      background: #f8f8f8;
+    }
+
+    .container {
+      display: grid;
+      gap: 10px;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    .item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      min-height: 100px;
+    }
+
+    /* Colores */
+    .A { background: #d8c500; }
+    .B { background: #3cc; }
+    .C { background: #e86ad7; }
+    .D { background: #d8c500; }
+    .E { background: #e74c3c; }
+    .F { background: #3cc; }
+    .G { background: #27ae60; }
+    .H { background: #e1aee6; }
+
+    /* 📌 Desktop */
+    @media (min-width: 768px) {
+      .container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+          "A A A A"
+          "B C D H"
+          "E F G H";
+      }
+
+      .A { grid-area: A; height: 120px; }
+      .B { grid-area: B; }
+      .C { grid-area: C; }
+      .D { grid-area: D; }
+      .E { grid-area: E; }
+      .F { grid-area: F; }
+      .G { grid-area: G; }
+      .H { grid-area: H; }
+    }
+
+    /* 📌 Mobile */
+    @media (max-width: 767px) {
+      .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+          "A A A"
+          "B C D"
+          "E F G"
+          "H H H";
+      }
+
+      .A { grid-area: A; height: 100px; }
+      .B { grid-area: B; }
+      .C { grid-area: C; }
+      .D { grid-area: D; }
+      .E { grid-area: E; }
+      .F { grid-area: F; }
+      .G { grid-area: G; }
+      .H { grid-area: H; height: 120px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item A">A</div>
+    <div class="item B">B</div>
+    <div class="item C">C</div>
+    <div class="item D">D</div>
+    <div class="item E">E</div>
+    <div class="item F">F</div>
+    <div class="item G">G</div>
+    <div class="item H">H</div>
+  </div>
+</body>
+</html>
